@@ -3,15 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginTop="4dp"
     tools:context=".MainActivity">
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="fill_parent"
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-
         <TextView
             android:id="@+id/tv_title1"
             android:layout_width="300dp"
@@ -26,25 +25,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
-
-        <Button
-            android:id="@+id/incps2"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:background="#afad"
-            android:text="@string/inc"
-            app:layout_constraintBottom_toBottomOf="@+id/etps2"
-            app:layout_constraintEnd_toEndOf="@+id/incps"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/etps2"
-            app:layout_constraintStart_toStartOf="@+id/incps"
-            app:layout_constraintTop_toTopOf="@+id/etps2"
-            app:layout_constraintVertical_bias="1.0" />
-
         <TextView
             android:id="@+id/tv_ln1"
             android:layout_width="160dp"
             android:layout_height="20dp"
+            android:layout_marginTop="4dp"
             android:background="#A4C639"
             android:gravity="center"
             android:text="@string/your_bijli_company_board"
@@ -56,7 +41,6 @@
             app:layout_constraintStart_toStartOf="@+id/tv_title1"
             app:layout_constraintTop_toBottomOf="@+id/tv_title1"
             app:layout_constraintVertical_bias="0.01" />
-
         <Spinner
             android:id="@+id/spinner4"
             android:layout_width="120dp"
@@ -66,14 +50,14 @@
             app:layout_constraintBottom_toBottomOf="@+id/tv_ln1"
             app:layout_constraintEnd_toEndOf="@+id/tv_title1"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/etlp"
+            app:layout_constraintStart_toEndOf="@+id/tv_ln1"
             app:layout_constraintTop_toTopOf="@+id/tv_ln1"
             app:layout_constraintVertical_bias="0.0" />
-
         <TextView
             android:id="@+id/textView4"
             android:layout_width="160dp"
             android:layout_height="20dp"
+            android:layout_marginTop="4dp"
             android:background="#A4C639"
             android:gravity="center"
             android:text="@string/select_your_category"
@@ -85,55 +69,192 @@
             app:layout_constraintStart_toStartOf="@+id/tv_ln1"
             app:layout_constraintTop_toBottomOf="@+id/tv_ln1"
             app:layout_constraintVertical_bias="0.01" />
-
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="120dp"
+            android:layout_height="20dp"
+            android:entries="@array/category_array"
+            android:prompt="@string/category_prompt"
+            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+            app:layout_constraintEnd_toEndOf="@+id/spinner4"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toTopOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.0" />
         <TextView
-            android:id="@+id/ldps"
+            android:id="@+id/tvlp"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/red_border"
+            android:gravity="start"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:text="@string/light_points"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.004"
+            app:layout_constraintStart_toStartOf="@+id/textView4"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.00" />
+        <EditText
+            android:id="@+id/ldlp"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:background="@drawable/yell_border"
+            android:gravity="center"
+            android:hint="@string/actual_40watt"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvlp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvlp"
+            app:layout_constraintTop_toTopOf="@+id/tvlp"
+            app:layout_constraintVertical_bias="0.0" />
+        <Button
+            android:id="@+id/declp"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:background="#afad"
+            android:text="@string/dec"
+            app:layout_constraintBottom_toBottomOf="@+id/ldlp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/ldlp"
+            app:layout_constraintTop_toTopOf="@+id/ldlp"
+            app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/etlp"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:background="@drawable/yell_border"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/eg_10_12"
+            android:textColor="#26348A"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/declp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/declp"
+            app:layout_constraintTop_toTopOf="@+id/declp"
+            app:layout_constraintVertical_bias="0.0" />
+        <Button
+            android:id="@+id/inclp"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:background="#afad"
+            android:text="@string/inc"
+            app:layout_constraintBottom_toBottomOf="@+id/etlp"
+            app:layout_constraintEnd_toEndOf="@+id/spinner2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/etlp"
+            app:layout_constraintTop_toTopOf="@+id/etlp"
+            app:layout_constraintVertical_bias="0.0"
+
+            />
+        <TextView
+            android:id="@+id/tvfp"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/red_border"
+            android:gravity="start"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:text="@string/fan_points"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvlp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvlp"
+            app:layout_constraintTop_toBottomOf="@+id/tvlp"
+            app:layout_constraintVertical_bias="0.00" />
+        <TextView
+            android:id="@+id/ldfp"
             android:layout_width="60dp"
             android:layout_height="20dp"
             android:background="@drawable/light_red"
             android:gravity="center"
-            android:text="@string/_1000_watt"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:text="@string/_60_watt"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvps"
-            app:layout_constraintEnd_toEndOf="@+id/ldws"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tvps"
-            app:layout_constraintStart_toStartOf="@+id/ldws"
-            app:layout_constraintTop_toTopOf="@+id/tvps"
+            app:layout_constraintBottom_toBottomOf="@+id/tvfp"
+            app:layout_constraintEnd_toEndOf="@+id/ldlp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvfp"
+            app:layout_constraintStart_toStartOf="@+id/ldlp"
+            app:layout_constraintTop_toTopOf="@+id/tvfp"
             app:layout_constraintVertical_bias="0.0" />
-
+        <Button
+            android:id="@+id/decfp"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:background="#afad"
+            android:text="@string/dec"
+            app:layout_constraintBottom_toBottomOf="@+id/ldfp"
+            app:layout_constraintEnd_toEndOf="@+id/declp"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/ldfp"
+            app:layout_constraintStart_toStartOf="@+id/declp"
+            app:layout_constraintTop_toTopOf="@+id/ldfp"
+            app:layout_constraintVertical_bias="0.0" />
         <TextView
-            android:id="@+id/ldlp5"
+            android:id="@+id/etfp"
             android:layout_width="60dp"
             android:layout_height="20dp"
-            android:background="@drawable/light_red"
+            android:autofillHints="10"
+            android:background="@drawable/yell_border"
+            android:ems="10"
             android:gravity="center"
-            android:text="@string/_6000_watt"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvps2"
-            app:layout_constraintEnd_toEndOf="@+id/ldps"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/ldps"
-            app:layout_constraintTop_toTopOf="@+id/tvps2"
+            android:hint="@string/eg_10_12"
+            android:textColor="#26348A"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/decfp"
+            app:layout_constraintEnd_toEndOf="@+id/etlp"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/tvfp"
+            app:layout_constraintStart_toStartOf="@+id/etlp"
+            app:layout_constraintTop_toTopOf="@+id/decfp"
             app:layout_constraintVertical_bias="0.0" />
-
-
-        <TextView
-            android:id="@+id/ldlp7"
-            android:layout_width="60dp"
+        <Button
+            android:id="@+id/incfp"
+            android:layout_width="30dp"
             android:layout_height="20dp"
-            android:background="@drawable/light_red"
-            android:gravity="center"
-            android:text="@string/_750_watt"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvmotor"
-            app:layout_constraintEnd_toEndOf="@+id/etac3"
+            android:background="#afad"
+            android:text="@string/inc"
+            app:layout_constraintBottom_toBottomOf="@+id/etfp"
+            app:layout_constraintEnd_toEndOf="@+id/inclp"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/etac3"
-            app:layout_constraintTop_toTopOf="@+id/tvmotor"
+            app:layout_constraintStart_toEndOf="@+id/etfp"
+            app:layout_constraintStart_toStartOf="@+id/inclp"
+            app:layout_constraintTop_toTopOf="@+id/etfp"
             app:layout_constraintVertical_bias="0.0" />
-
-
+        <TextView
+            android:id="@+id/tvws"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/red_border"
+            android:gravity="start"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:text="@string/wall_sockets"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvfp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvfp"
+            app:layout_constraintTop_toBottomOf="@+id/tvfp"
+            app:layout_constraintVertical_bias="0.00" />
         <TextView
             android:id="@+id/ldws"
             android:layout_width="60dp"
@@ -151,112 +272,19 @@
             app:layout_constraintStart_toStartOf="@+id/ldfp"
             app:layout_constraintTop_toTopOf="@+id/tvws"
             app:layout_constraintVertical_bias="0.0" />
-
-        <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="120dp"
+        <Button
+            android:id="@+id/decws"
+            android:layout_width="30dp"
             android:layout_height="20dp"
-            android:entries="@array/category_array"
-            android:prompt="@string/category_prompt"
-            app:layout_constraintBottom_toBottomOf="@+id/textView4"
-            app:layout_constraintEnd_toEndOf="@+id/spinner4"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView4"
-            app:layout_constraintTop_toTopOf="@+id/textView4"
+            android:background="#afad"
+            android:text="@string/dec"
+            app:layout_constraintBottom_toBottomOf="@+id/ldws"
+            app:layout_constraintEnd_toEndOf="@+id/decfp"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/ldws"
+            app:layout_constraintStart_toStartOf="@+id/decfp"
+            app:layout_constraintTop_toTopOf="@+id/ldws"
             app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/tvlp"
-            android:layout_width="100dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/red_border"
-            android:gravity="start"
-            android:paddingStart="3dp"
-            android:paddingEnd="3dp"
-            android:text="@string/light_points"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.004"
-            app:layout_constraintStart_toStartOf="@+id/textView4"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
-            app:layout_constraintVertical_bias="0.00" />
-
-        <TextView
-            android:id="@+id/etlp"
-            android:layout_width="60dp"
-            android:layout_height="20dp"
-            android:background="@drawable/yell_border"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/eg_10_12"
-            android:textColor="#26348A"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/declp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.01"
-            app:layout_constraintStart_toEndOf="@+id/declp"
-            app:layout_constraintTop_toTopOf="@+id/declp"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/tvfp"
-            android:layout_width="100dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/red_border"
-            android:gravity="start"
-            android:paddingStart="3dp"
-            android:paddingEnd="3dp"
-            android:text="@string/fan_points"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tvlp"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tvlp"
-            app:layout_constraintTop_toBottomOf="@+id/tvlp"
-            app:layout_constraintVertical_bias="0.00" />
-
-
-        <TextView
-            android:id="@+id/etfp"
-            android:layout_width="60dp"
-            android:layout_height="20dp"
-            android:autofillHints="10"
-            android:background="@drawable/yell_border"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/eg_10_12"
-            android:textColor="#26348A"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/decfp"
-            app:layout_constraintEnd_toEndOf="@+id/etlp"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tvfp"
-            app:layout_constraintStart_toStartOf="@+id/etlp"
-            app:layout_constraintTop_toTopOf="@+id/decfp"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/tvws"
-            android:layout_width="100dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/red_border"
-            android:gravity="start"
-            android:paddingStart="3dp"
-            android:paddingEnd="3dp"
-            android:text="@string/wall_sockets"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tvfp"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tvfp"
-            app:layout_constraintTop_toBottomOf="@+id/tvfp"
-            app:layout_constraintVertical_bias="0.00" />
 
         <TextView
             android:id="@+id/etws"
@@ -271,12 +299,70 @@
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/decws"
             app:layout_constraintEnd_toEndOf="@+id/etfp"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toEndOf="@+id/tvws"
             app:layout_constraintStart_toStartOf="@+id/etfp"
             app:layout_constraintTop_toTopOf="@+id/decws"
             app:layout_constraintVertical_bias="0.0" />
 
+        <Button
+            android:id="@+id/incws"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:background="#afad"
+            android:text="@string/inc"
+            app:layout_constraintBottom_toBottomOf="@+id/etws"
+            app:layout_constraintEnd_toEndOf="@+id/incfp"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/etws"
+            app:layout_constraintStart_toStartOf="@+id/incfp"
+            app:layout_constraintTop_toTopOf="@+id/etws"
+            app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/tvps"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/red_border"
+            android:gravity="start"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:text="@string/power_sockets"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvws"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvws"
+            app:layout_constraintTop_toBottomOf="@+id/tvws"
+            app:layout_constraintVertical_bias="0.00" />
+        <TextView
+            android:id="@+id/ldps"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:background="@drawable/light_red"
+            android:gravity="center"
+            android:text="@string/_1000_watt"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvps"
+            app:layout_constraintEnd_toEndOf="@+id/ldws"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tvps"
+            app:layout_constraintStart_toStartOf="@+id/ldws"
+            app:layout_constraintTop_toTopOf="@+id/tvps"
+            app:layout_constraintVertical_bias="0.0" />
+        <Button
+            android:id="@+id/decps"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:background="#afad"
+            android:text="@string/dec"
+            app:layout_constraintBottom_toBottomOf="@+id/ldps"
+            app:layout_constraintEnd_toEndOf="@+id/decws"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/ldps"
+            app:layout_constraintStart_toStartOf="@+id/decws"
+            app:layout_constraintTop_toTopOf="@+id/ldps"
+            app:layout_constraintVertical_bias="0.0" />
         <TextView
             android:id="@+id/etps"
             android:layout_width="60dp"
@@ -285,17 +371,74 @@
             android:background="@drawable/yell_border"
             android:ems="10"
             android:gravity="center"
+
             android:hint="@string/eg_2_3"
             android:textColor="#26348A"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/decps"
             app:layout_constraintEnd_toEndOf="@+id/etws"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toEndOf="@+id/tvps"
             app:layout_constraintStart_toStartOf="@+id/etws"
             app:layout_constraintTop_toTopOf="@+id/decps"
             app:layout_constraintVertical_bias="0.0" />
-
+        <Button
+            android:id="@+id/incps"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:background="#afad"
+            android:text="@string/inc"
+            app:layout_constraintBottom_toBottomOf="@+id/etps"
+            app:layout_constraintEnd_toEndOf="@+id/incws"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/etps"
+            app:layout_constraintStart_toStartOf="@+id/incws"
+            app:layout_constraintTop_toTopOf="@+id/etps"
+            app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/tvps2"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/red_border"
+            android:gravity="start"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:text="@string/_3ph_powerSocket"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvps"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvps"
+            app:layout_constraintTop_toBottomOf="@+id/tvps"
+            app:layout_constraintVertical_bias="0.00" />
+        <TextView
+            android:id="@+id/ldlp5"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:background="@drawable/light_red"
+            android:gravity="center"
+            android:text="@string/_6000_watt"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvps2"
+            app:layout_constraintEnd_toEndOf="@+id/ldps"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/ldps"
+            app:layout_constraintTop_toTopOf="@+id/tvps2"
+            app:layout_constraintVertical_bias="0.0" />
+        <Button
+            android:id="@+id/decps2"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:background="#afad"
+            android:text="@string/dec"
+            app:layout_constraintBottom_toBottomOf="@+id/ldlp5"
+            app:layout_constraintEnd_toEndOf="@+id/decps"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/ldlp5"
+            app:layout_constraintStart_toStartOf="@+id/decps"
+            app:layout_constraintTop_toTopOf="@+id/ldlp5"
+            app:layout_constraintVertical_bias="0.0" />
         <TextView
             android:id="@+id/etps2"
             android:layout_width="60dp"
@@ -309,34 +452,41 @@
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/decps2"
             app:layout_constraintEnd_toEndOf="@+id/etps"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toEndOf="@+id/tvps"
             app:layout_constraintStart_toStartOf="@+id/etps"
             app:layout_constraintTop_toTopOf="@+id/ldlp5"
             app:layout_constraintVertical_bias="0.0" />
-
-
-        <TextView
-            android:id="@+id/etac2"
-            android:layout_width="60dp"
+        <Button
+            android:id="@+id/incps2"
+            android:layout_width="30dp"
             android:layout_height="20dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
-            android:autofillHints="3"
-            android:background="@drawable/yell_border"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/eg_2_3"
-            android:textColor="#26348A"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/decac2"
-            app:layout_constraintEnd_toEndOf="@+id/etps2"
+            android:background="#afad"
+            android:text="@string/inc"
+            app:layout_constraintBottom_toBottomOf="@+id/etps2"
+            app:layout_constraintEnd_toEndOf="@+id/incps"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/etps2"
-            app:layout_constraintStart_toStartOf="@+id/etps2"
-            app:layout_constraintTop_toTopOf="@+id/decac2"
-            app:layout_constraintVertical_bias="0.0" />
-
+            app:layout_constraintStart_toStartOf="@+id/incps"
+            app:layout_constraintTop_toTopOf="@+id/etps2"
+            app:layout_constraintVertical_bias="1.0" />
+        <TextView
+            android:id="@+id/tvac2"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/red_border"
+            android:gravity="start"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:text="@string/air_conditioner"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvps2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvps2"
+            app:layout_constraintTop_toBottomOf="@+id/tvps2"
+            app:layout_constraintVertical_bias="0.00" />
         <EditText
             android:id="@+id/etac3"
             android:layout_width="60dp"
@@ -356,7 +506,97 @@
             app:layout_constraintStart_toStartOf="@+id/ldlp5"
             app:layout_constraintTop_toTopOf="@+id/tvac2"
             app:layout_constraintVertical_bias="0.0" />
+        <Button
+            android:id="@+id/decac2"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="9dp"
+            android:background="#afad"
+            android:text="@string/dec"
+            app:layout_constraintBottom_toBottomOf="@+id/etac3"
+            app:layout_constraintEnd_toEndOf="@+id/decps2"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/etac3"
+            app:layout_constraintStart_toStartOf="@+id/decps2"
+            app:layout_constraintTop_toTopOf="@+id/etac3"
+            app:layout_constraintVertical_bias="1.0" />
+        <TextView
+            android:id="@+id/etac2"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:autofillHints="3"
+            android:background="@drawable/yell_border"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/eg_2_3"
+            android:textColor="#26348A"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/decac2"
+            app:layout_constraintEnd_toEndOf="@+id/etps2"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/etps2"
+            app:layout_constraintStart_toStartOf="@+id/etps2"
+            app:layout_constraintTop_toTopOf="@+id/decac2"
+            app:layout_constraintVertical_bias="0.0" />
+        <Button
+            android:id="@+id/incac2"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:background="#afad"
+            android:text="@string/inc"
+            app:layout_constraintBottom_toBottomOf="@+id/etac2"
+            app:layout_constraintEnd_toEndOf="@+id/incps2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/etac2"
+            app:layout_constraintStart_toStartOf="@+id/incps2"
+            app:layout_constraintTop_toTopOf="@+id/etac2"
+            app:layout_constraintVertical_bias="1.0" />
+        <TextView
+            android:id="@+id/tvmotor"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/red_border"
+            android:gravity="start"
 
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:text="@string/motor_hp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvac2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvac2"
+            app:layout_constraintTop_toBottomOf="@+id/tvac2"
+            app:layout_constraintVertical_bias="0.00" />
+        <TextView
+            android:id="@+id/ldlp7"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:background="@drawable/light_red"
+            android:gravity="center"
+            android:text="@string/_750_watt"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvmotor"
+            app:layout_constraintEnd_toEndOf="@+id/etac3"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/etac3"
+            app:layout_constraintTop_toTopOf="@+id/tvmotor"
+            app:layout_constraintVertical_bias="0.0" />
+        <Button
+            android:id="@+id/decmotor"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+
+            android:background="#afad"
+            android:text="@string/dec"
+            app:layout_constraintBottom_toBottomOf="@+id/ldlp7"
+            app:layout_constraintEnd_toEndOf="@+id/decac2"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/ldlp7"
+            app:layout_constraintStart_toStartOf="@+id/decac2"
+            app:layout_constraintTop_toTopOf="@+id/ldlp7"
+            app:layout_constraintVertical_bias="0.0" />
         <TextView
             android:id="@+id/etmotor"
             android:layout_width="60dp"
@@ -370,31 +610,42 @@
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/decmotor"
             app:layout_constraintEnd_toEndOf="@+id/etac2"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toEndOf="@+id/tvmotor"
             app:layout_constraintStart_toStartOf="@+id/etac2"
             app:layout_constraintTop_toTopOf="@+id/decmotor"
             app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/etmotor2"
-            android:layout_width="60dp"
+        <Button
+            android:id="@+id/incmotor"
+            android:layout_width="30dp"
             android:layout_height="20dp"
-            android:autofillHints=""
-            android:background="@drawable/yell_border"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/enter_1"
-            android:textColor="#26348A"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/decmotor2"
-            app:layout_constraintEnd_toEndOf="@+id/etmotor"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tvmotor2"
-            app:layout_constraintStart_toStartOf="@+id/etmotor"
-            app:layout_constraintTop_toTopOf="@+id/decmotor2"
-            app:layout_constraintVertical_bias="0.0" />
 
+            android:background="#afad"
+            android:text="@string/inc"
+            app:layout_constraintBottom_toBottomOf="@+id/etmotor"
+            app:layout_constraintEnd_toEndOf="@+id/incac2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/etmotor"
+            app:layout_constraintStart_toStartOf="@+id/incac2"
+            app:layout_constraintTop_toTopOf="@+id/etmotor"
+            app:layout_constraintVertical_bias="1.0" />
+        <TextView
+            android:id="@+id/tvmotor2"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/red_border"
+            android:gravity="start"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:text="@string/any_other_watts"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvmotor"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvmotor"
+            app:layout_constraintTop_toBottomOf="@+id/tvmotor"
+            app:layout_constraintVertical_bias="0.00" />
         <EditText
             android:id="@+id/etmotor3"
             android:layout_width="60dp"
@@ -413,286 +664,6 @@
             app:layout_constraintStart_toStartOf="@+id/ldlp7"
             app:layout_constraintTop_toTopOf="@+id/tvmotor2"
             app:layout_constraintVertical_bias="0.0" />
-
-
-        <TextView
-            android:id="@+id/tvload"
-            android:layout_width="180dp"
-            android:layout_height="28dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/red_border"
-            android:ems="10"
-            android:gravity="center"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tvmessage"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tvmotor2"
-            app:layout_constraintTop_toBottomOf="@+id/tvmessage"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/tvps"
-            android:layout_width="100dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/red_border"
-            android:gravity="start"
-            android:paddingStart="3dp"
-            android:paddingEnd="3dp"
-            android:text="@string/power_sockets"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tvws"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tvws"
-            app:layout_constraintTop_toBottomOf="@+id/tvws"
-            app:layout_constraintVertical_bias="0.00" />
-
-        <TextView
-            android:id="@+id/tvps2"
-            android:layout_width="100dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/red_border"
-            android:gravity="start"
-            android:paddingStart="3dp"
-            android:paddingEnd="3dp"
-            android:text="@string/_3ph_powerSocket"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tvps"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tvps"
-            app:layout_constraintTop_toBottomOf="@+id/tvps"
-            app:layout_constraintVertical_bias="0.00" />
-
-        <TextView
-            android:id="@+id/tvac2"
-            android:layout_width="100dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/red_border"
-            android:gravity="start"
-            android:paddingStart="3dp"
-            android:paddingEnd="3dp"
-            android:text="@string/air_conditioner"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tvps2"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tvps2"
-            app:layout_constraintTop_toBottomOf="@+id/tvps2"
-            app:layout_constraintVertical_bias="0.00" />
-
-        <TextView
-            android:id="@+id/tvmotor"
-            android:layout_width="100dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/red_border"
-            android:gravity="start"
-            android:paddingStart="3dp"
-            android:paddingEnd="3dp"
-
-            android:text="@string/motor_hp"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tvac2"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tvac2"
-            app:layout_constraintTop_toBottomOf="@+id/tvac2"
-            app:layout_constraintVertical_bias="0.00" />
-
-        <TextView
-            android:id="@+id/tvmotor2"
-            android:layout_width="100dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/red_border"
-            android:gravity="start"
-            android:paddingStart="3dp"
-            android:paddingEnd="3dp"
-            android:text="@string/any_other_watts"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tvmotor"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tvmotor"
-            app:layout_constraintTop_toBottomOf="@+id/tvmotor"
-            app:layout_constraintVertical_bias="0.00" />
-
-        <Button
-            android:id="@+id/tvmessage"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="#afad"
-            android:gravity="center"
-            android:text="@string/check_your_load_here"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/incmotor2"
-            app:layout_constraintHorizontal_bias="0.489"
-            app:layout_constraintStart_toStartOf="@+id/tvmotor2"
-            app:layout_constraintTop_toBottomOf="@+id/etmotor3"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/tvkw"
-            android:layout_width="120dp"
-            android:layout_height="28dp"
-            android:background="#E53935"
-            android:gravity="center"
-            android:paddingStart="3dp"
-            android:paddingEnd="3dp"
-            android:text="@string/kilowatt"
-            android:textColor="#ffffffff"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvload"
-            app:layout_constraintEnd_toEndOf="@+id/incmotor2"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tvload"
-            app:layout_constraintTop_toTopOf="@+id/tvload"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <EditText
-            android:id="@+id/ldlp"
-            android:layout_width="60dp"
-            android:layout_height="20dp"
-            android:background="@drawable/yell_border"
-            android:gravity="center"
-            android:hint="@string/actual_40watt"
-            android:importantForAutofill="no"
-            android:inputType="number"
-            android:paddingStart="2dp"
-            android:paddingEnd="2dp"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvlp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/tvlp"
-            app:layout_constraintTop_toTopOf="@+id/tvlp"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/ldfp"
-            android:layout_width="60dp"
-            android:layout_height="20dp"
-            android:background="@drawable/light_red"
-            android:gravity="center"
-            android:paddingStart="2dp"
-            android:paddingEnd="2dp"
-            android:text="@string/_60_watt"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvfp"
-            app:layout_constraintEnd_toEndOf="@+id/ldlp"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/tvfp"
-            app:layout_constraintStart_toStartOf="@+id/ldlp"
-            app:layout_constraintTop_toTopOf="@+id/tvfp"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <Button
-            android:id="@+id/declp"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:background="#afad"
-            android:text="@string/dec"
-            app:layout_constraintBottom_toBottomOf="@+id/ldlp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.05"
-            app:layout_constraintStart_toEndOf="@+id/ldlp"
-            app:layout_constraintTop_toTopOf="@+id/ldlp"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <Button
-            android:id="@+id/decfp"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:background="#afad"
-            android:text="@string/dec"
-            app:layout_constraintBottom_toBottomOf="@+id/ldfp"
-            app:layout_constraintEnd_toEndOf="@+id/declp"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/ldfp"
-            app:layout_constraintStart_toStartOf="@+id/declp"
-            app:layout_constraintTop_toTopOf="@+id/ldfp"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <Button
-            android:id="@+id/decws"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:background="#afad"
-            android:text="@string/dec"
-            app:layout_constraintBottom_toBottomOf="@+id/ldws"
-            app:layout_constraintEnd_toEndOf="@+id/decfp"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/ldws"
-            app:layout_constraintStart_toStartOf="@+id/decfp"
-            app:layout_constraintTop_toTopOf="@+id/ldws"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <Button
-            android:id="@+id/decps"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:background="#afad"
-            android:text="@string/dec"
-            app:layout_constraintBottom_toBottomOf="@+id/ldps"
-            app:layout_constraintEnd_toEndOf="@+id/decws"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/ldps"
-            app:layout_constraintStart_toStartOf="@+id/decws"
-            app:layout_constraintTop_toTopOf="@+id/ldps"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <Button
-            android:id="@+id/decps2"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:background="#afad"
-            android:text="@string/dec"
-            app:layout_constraintBottom_toBottomOf="@+id/ldlp5"
-            app:layout_constraintEnd_toEndOf="@+id/decps"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/ldlp5"
-            app:layout_constraintStart_toStartOf="@+id/decps"
-            app:layout_constraintTop_toTopOf="@+id/ldlp5"
-            app:layout_constraintVertical_bias="0.0" />
-
-
-        <Button
-            android:id="@+id/decac2"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="9dp"
-            android:background="#afad"
-            android:text="@string/dec"
-            app:layout_constraintBottom_toBottomOf="@+id/etac3"
-            app:layout_constraintEnd_toEndOf="@+id/decps2"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/etac3"
-            app:layout_constraintStart_toStartOf="@+id/decps2"
-            app:layout_constraintTop_toTopOf="@+id/etac3"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <Button
-            android:id="@+id/decmotor"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-
-            android:background="#afad"
-            android:text="@string/dec"
-            app:layout_constraintBottom_toBottomOf="@+id/ldlp7"
-            app:layout_constraintEnd_toEndOf="@+id/decac2"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/ldlp7"
-            app:layout_constraintStart_toStartOf="@+id/decac2"
-            app:layout_constraintTop_toTopOf="@+id/ldlp7"
-            app:layout_constraintVertical_bias="0.0" />
-
         <Button
             android:id="@+id/decmotor2"
             android:layout_width="30dp"
@@ -701,97 +672,29 @@
             android:text="@string/dec"
             app:layout_constraintBottom_toBottomOf="@+id/etmotor3"
             app:layout_constraintEnd_toEndOf="@+id/decmotor"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toEndOf="@+id/etmotor3"
             app:layout_constraintStart_toStartOf="@+id/decmotor"
             app:layout_constraintTop_toTopOf="@+id/etmotor3"
             app:layout_constraintVertical_bias="0.0" />
-
-        <Button
-            android:id="@+id/inclp"
-            android:layout_width="30dp"
+        <TextView
+            android:id="@+id/etmotor2"
+            android:layout_width="60dp"
             android:layout_height="20dp"
-            android:background="#afad"
-            android:text="@string/inc"
-            app:layout_constraintBottom_toBottomOf="@+id/etlp"
-            app:layout_constraintEnd_toEndOf="@+id/spinner2"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/etlp"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <Button
-            android:id="@+id/incfp"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:background="#afad"
-            android:text="@string/inc"
-            app:layout_constraintBottom_toBottomOf="@+id/etfp"
-            app:layout_constraintEnd_toEndOf="@+id/inclp"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/etfp"
-            app:layout_constraintStart_toStartOf="@+id/inclp"
-            app:layout_constraintTop_toTopOf="@+id/etfp"
+            android:autofillHints=""
+            android:background="@drawable/yell_border"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/enter_1"
+            android:textColor="#26348A"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/decmotor2"
+            app:layout_constraintEnd_toEndOf="@+id/etmotor"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/tvmotor2"
+            app:layout_constraintStart_toStartOf="@+id/etmotor"
+            app:layout_constraintTop_toTopOf="@+id/decmotor2"
             app:layout_constraintVertical_bias="0.0" />
-
-        <Button
-            android:id="@+id/incws"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:background="#afad"
-            android:text="@string/inc"
-            app:layout_constraintBottom_toBottomOf="@+id/etws"
-            app:layout_constraintEnd_toEndOf="@+id/incfp"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/etws"
-            app:layout_constraintStart_toStartOf="@+id/incfp"
-            app:layout_constraintTop_toTopOf="@+id/etws"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <Button
-            android:id="@+id/incps"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:background="#afad"
-            android:text="@string/inc"
-            app:layout_constraintBottom_toBottomOf="@+id/etps"
-            app:layout_constraintEnd_toEndOf="@+id/incws"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/etps"
-            app:layout_constraintStart_toStartOf="@+id/incws"
-            app:layout_constraintTop_toTopOf="@+id/etps"
-            app:layout_constraintVertical_bias="0.0" />
-
-
-        <Button
-            android:id="@+id/incac2"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:background="#afad"
-            android:text="@string/inc"
-            app:layout_constraintBottom_toBottomOf="@+id/etac2"
-            app:layout_constraintEnd_toEndOf="@+id/incps2"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/etac2"
-            app:layout_constraintStart_toStartOf="@+id/incps2"
-            app:layout_constraintTop_toTopOf="@+id/etac2"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <Button
-            android:id="@+id/incmotor"
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-
-            android:background="#afad"
-            android:text="@string/inc"
-            app:layout_constraintBottom_toBottomOf="@+id/etmotor"
-            app:layout_constraintEnd_toEndOf="@+id/incac2"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/etmotor"
-            app:layout_constraintStart_toStartOf="@+id/incac2"
-            app:layout_constraintTop_toTopOf="@+id/etmotor"
-            app:layout_constraintVertical_bias="1.0" />
-
         <Button
             android:id="@+id/incmotor2"
             android:layout_width="30dp"
@@ -805,41 +708,87 @@
             app:layout_constraintStart_toStartOf="@+id/incmotor"
             app:layout_constraintTop_toTopOf="@+id/etmotor2"
             app:layout_constraintVertical_bias="0.0" />
-
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="180dp"
+        <Button
+            android:id="@+id/tvmessage"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/gradient"
+            android:gravity="center"
+            android:text="@string/check_your_load_here"
+            android:textColor="#ffff"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/incmotor2"
+            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintStart_toStartOf="@+id/tvmotor2"
+            app:layout_constraintTop_toBottomOf="@+id/etmotor3"
+            app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/tvload"
+            android:layout_width="180dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/red_border"
             android:ems="10"
             android:gravity="center"
-            android:text="@string/new_expen"
-            android:textColor="@color/colorAccent"
-            android:textSize="18sp"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvmessage"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvmotor2"
+            app:layout_constraintTop_toBottomOf="@+id/tvmessage"
+            app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/tvkw"
+            android:layout_width="120dp"
+            android:layout_height="28dp"
+            android:background="#E53935"
+            android:gravity="center"
+            android:paddingStart="3dp"
+            android:paddingEnd="3dp"
+            android:text="@string/kilowatt"
+            android:textColor="#ffffffff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvload"
+            app:layout_constraintEnd_toEndOf="@+id/incmotor2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tvload"
+            app:layout_constraintTop_toTopOf="@+id/tvload"
+            app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/contact"
+            android:textColor="#ffff"
+            android:layout_marginTop="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tvload"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvload"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.971" />
 
-        <Button
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingStart="2dp"
-            android:paddingEnd="2dp"
-            android:text="@string/exp"
-            android:textColor="#E53935"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView3"
-            app:layout_constraintEnd_toEndOf="@+id/tvkw"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/textView3"
-            app:layout_constraintTop_toTopOf="@+id/textView3"
-            app:layout_constraintVertical_bias="0.533" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
