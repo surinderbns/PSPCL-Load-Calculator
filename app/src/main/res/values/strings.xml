@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">PSPCL LOAD CALCULATOR</string>
+    <string name="company_prompt" translatable="false">ਬਿਜਲੀ ਕੰਪਨੀ</string>
+    <string-array name="company_array">
+        <item>ਪੰ.ਸ.ਪਾ.ਕਾ.</item>
+    </string-array>
+    <string name="category_prompt" translatable="false">ਸ਼੍ਰੇਣੀ ਚੁਣੋ</string>
+    <string name="load_calculator" translatable="false">ਲੋਡ -ਕੈਲਕੁਲੇਟਰ</string>
+    <string name="_1000_watt" translatable="false">1000 ਵਾਟ</string>
+    <string name="_6000_watt" translatable="false">6000 ਵਾਟ</string>
+    <string name="_2500_watt" translatable="false">ਅਸਲ ਜਾਂ2500ਵਾਟ</string>
+    <string name="_750_watt" translatable="false">746 ਵਾਟ</string>
+    <string name="your_bijli_company_board" translatable="false">ਤੁਹਾਡੀ ਬਿਜਲੀ ਕੰਪਨੀ/ਬੋਰਡ</string>
+    <string name="select_your_category" translatable="false">ਸ੍ਰੇਣੀ ਚੁਣੋ(ਘਰੇਲੂ/ਵਪਾਰਕ)</string>
+    <string name="fan_points" translatable="false">ਫੈਨ ਪੁਆਇੰਟ</string>
+    <string name="eg_10_12" translatable="false">10,12</string>
+    <string name="eg_2_3" translatable="false"> 2,3</string>
+    <string name="eg_0_5_1" translatable="false">eg 0.5,1</string>
+    <string name="enter_1" translatable="false">"1ਭਰੋ "</string>
+    <string name="name_plate" translatable="false">ਨੇਮ ਪਲੇਟ ਅਨੁਸਾਰ</string>
+    <string name="wall_sockets" translatable="false">ਵਾਲ ਸਾਕਿਟਾਂ</string>
+    <string name="power_sockets" translatable="false">ਪਾਵਰ ਸਾਕਿਟਾਂ</string>
+    <string name="_3ph_powerSocket" translatable="false">3 ਫੇਜ਼ ਪਾਵਰ ਸਾਕਿਟਾਂ</string>
+    <string name="motor_hp" translatable="false">ਮੋਟਰ ਹੋਰਸ ਪਾਵਰ</string>
+    <string name="check_your_load_here" translatable="false">" ਆਪਣਾ  ਲੋਡ  ਚੈੱਕ ਕਰੋ"</string>
+    <string name="any_other_watts" translatable="false">ਕੋਈ ਹੋਰ ਲੋਡ</string>
+    <string name="_60_watt" translatable="false">60 ਵਾਟ</string>
+    <string name="kilowatt" translatable="false">ਕਿਲੋਵਾਟ</string>
+    <string name="dec" translatable="false">-</string>
+    <string name="inc" translatable="false">+</string>
+    <string name="light_points" translatable="false">ਲਾਇਟ ਪੁਆਇੰਟ</string>
+    <string name="air_conditioner" translatable="false">ਏ.ਸੀ.</string>
+    <string name="new_expen" translatable="false">ਨਵੇਂ ਕਨੈਕਸ਼ਨ ਦੇ ਖਰਚੇ(100 ਕੇ.ਵੀ.ਏ. ਤੱਕ) </string>
+    <string name="exp" translatable="false">>--></string>
+    <string-array name="category_array">
+        <item>ਘਰੇਲੂ</item>
+        <item>ਐਨ.ਆਰ.ਐਸ.</item>
+    </string-array>
+
+
+    <string name="actual_40watt" translatable="false">ਅਸਲ ਜਾਂ40ਵਾਟ</string>
+    <string name="def_lp" translatable="false">40</string>
+    <string name="def_lpn" translatable="false">10</string>
+    <string name="def_fpn" translatable="false">6</string>
+    <string name="def_wsn" translatable="false">4</string>
+    <string name="def_psn" translatable="false">2</string>
+    <string name="def_hp" translatable="false">0.5</string>
+    <string name="def_acp" translatable="false">2500</string>
+    <string name="def_acn" translatable="false">1</string>
+    <string name="def_ldp" translatable="false">500</string>
+    <string name="def_ldn" translatable="false">0</string>
+    <string name="def_uc" translatable="false">1000</string>
+    <string name="def_bp" translatable="false">60</string>
+    <string name="def_cl" translatable="false">2</string>
+    <string name="contact" translatable="false"> PSPCL Load Calculator Ver-1.02 Powered by:Er S.K. Bains SE PSPCL, Mail: surinderbns@gmail.com, Mobile: 9041519091</string>
+
+
+
+</resources>
